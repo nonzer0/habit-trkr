@@ -986,6 +986,7 @@
     "dependencies": [
       "jsr:@hono/hono@^4.6.15",
       "jsr:@std/dotenv@~0.225.3",
+      "npm:@solid-primitives/pagination@0.3",
       "npm:@solidjs/router@~0.14.10",
       "npm:@types/pg@^8.11.10",
       "npm:drizzle-kit@~0.30.1",

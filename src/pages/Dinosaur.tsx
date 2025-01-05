@@ -1,4 +1,4 @@
-import { createSignal, onMount } from "solid-js";
+import { createSignal, For, onMount } from "solid-js";
 import { A, useParams } from "@solidjs/router";
 import type { Dino } from "../types.ts";
 
@@ -10,10 +10,14 @@ export default function Dinosaur() {
   });
 
   onMount(async () => {
-    const resp = await fetch(`/api/dinosaurs/${params.selectedDinosaur}`);
-    const dino = (await resp.json()) as Dino;
-    setDinosaur(dino);
-    console.log("Dinosaur", dino);
+    try {
+      const resp = await fetch(`/api/dinosaurs/${params.selectedDinosaur}`);
+      const dino = (await resp.json()) as Dino;
+      setDinosaur(dino);
+      console.log("Dinosaur", dino);
+    } catch (e) {
+      console.log('error', e)
+    }
   });
 
   return (
