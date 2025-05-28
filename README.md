@@ -1,13 +1,12 @@
 ## Development
 
-### Database
+### Run Stack
 
 ```
 docker-compose -f docker-compose.yml up
 ```
 
 ### Frontend
-
 
 ## Usage
 
