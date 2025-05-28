@@ -6,18 +6,6 @@
 docker-compose -f docker-compose.yml up
 ```
 
-### Backend
-
-```
-cd packages/fast-api/
-```
-
-then...
-
-```
-npm run dev
-```
-
 ### Frontend
 
 
