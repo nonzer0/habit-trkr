@@ -2,6 +2,19 @@
 version: "3.9"
 
 services:
+  backend:
+    build:
+      context: ./packages/fast-api
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./packages/fast-api:/src
+      - /src/node_modules
   db:
     image: postgres
     restart: always
