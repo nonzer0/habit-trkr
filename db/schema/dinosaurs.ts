@@ -1,6 +1,7 @@
 import { relations } from 'drizzle-orm';
 import {
     boolean,
+    date,
     foreignKey,
     integer,
     pgTable,

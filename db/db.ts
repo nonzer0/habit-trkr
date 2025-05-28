@@ -2,9 +2,10 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import {
   dinosaurs as dinosaurSchema,
   dinosaursRelations,
+  habits as habitSchema,
   tasks as taskSchema,
   tasksRelations,
-} from "./schema.ts";
+} from "./schema";
 import pg from "pg";
 import { integer } from "drizzle-orm/pg-core";
 import { eq } from "drizzle-orm";
@@ -13,7 +14,7 @@ import { eq } from "drizzle-orm";
 const { Pool } = pg;
 
 // console.log('db', Deno.env.get('DATABASE_URL'));
-const connectionString = Deno.env.get("DATABASE_URL");
+const connectionString = process.env.DATABASE_URL;
 // console.log('constring', connectionString);
 // Instantiate Drizzle client with pg driver and schema.
 
@@ -34,7 +35,7 @@ export const db = drizzle({
   client: new Pool({
     connectionString,
   }),
-  schema: { dinosaurSchema, taskSchema, dinosaursRelations, tasksRelations },
+  schema: { dinosaurSchema, habitSchema, taskSchema, dinosaursRelations, tasksRelations },
 });
 
 export function getAllDinosaurs(
