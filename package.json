@@ -8,9 +8,7 @@
     "tsc/build": "tsc -b && nx build",
     "nx/preview": "nx preview",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "lint": "eslint . --ext .ts --fix",
-    "type-check": "tsc --noEmit",
-    "prepare": "simple-git-hooks"
+    "lint": "eslint . --ext .ts --fix"
   },
   "workspaces": [
     "packages/*"
